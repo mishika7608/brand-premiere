@@ -77,17 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aris Vance — Independent Design Director" },
+      { title: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
       {
         name: "description",
         content:
-          "Personal studio of Aris Vance. Independent design direction for brands, products, and interfaces engineered for permanence.",
+          "Portfolio of Kai Nakamura — building intelligent systems and defending them. AI/ML research, security engineering, and full-stack product work.",
       },
-      { property: "og:title", content: "Aris Vance — Independent Design Director" },
+      { property: "og:title", content: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
       {
         property: "og:description",
         content:
-          "Independent design direction for brands, products, and interfaces engineered for permanence.",
+          "AI/ML research, security engineering, and full-stack product work — with a bias for shipping.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap",
       },
     ],
   }),
