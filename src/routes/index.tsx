@@ -58,7 +58,7 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "certifications", label: "Certs" },
@@ -75,39 +75,25 @@ const METRICS = [
 type TL = { year: string; title: string; org: string; body: string; kind: "work" | "edu" };
 const TIMELINE: TL[] = [
   {
-    year: "2024 — Now",
-    title: "Staff ML/Security Engineer",
-    org: "Halcyon Labs",
-    body: "Leading applied research on adversarial robustness for large models. Built the red-team simulation platform used by 3 Fortune 100 partners.",
-    kind: "work",
-  },
-  {
-    year: "2022 — 2024",
-    title: "Senior AI Engineer",
-    org: "Aperture AI",
-    body: "Shipped retrieval + fine-tuning stack powering agent products for 400k+ users. Cut inference cost 62% via speculative decoding and quantization.",
-    kind: "work",
-  },
-  {
-    year: "2020 — 2022",
-    title: "Offensive Security Engineer",
-    org: "Cloudspire Security",
-    body: "Led red-team engagements for fintech and healthcare. Authored internal tooling now open-sourced with 8k+ stars.",
-    kind: "work",
-  },
-  {
-    year: "2018 — 2020",
-    title: "M.S. Computer Science",
-    org: "Carnegie Mellon University",
-    body: "Concentration in machine learning + systems security. Thesis on differentially-private federated learning.",
+    year: "2023 — Now",
+    title: "B.Tech Computer Science Engineering",
+    org: "GL Bajaj Institute of Technology & Management",
+    body: "CGPA: 8.58/10 • Coursework: DSA, DBMS, OS, Computer Networks, Machine Learning & Cybersecurity, Artificial Intelligence",
     kind: "edu",
   },
   {
-    year: "2014 — 2018",
-    title: "B.S. Computer Engineering",
-    org: "UC Berkeley",
-    body: "Graduated with honors. President of the offensive security club; DEFCON CTF finalist ×3.",
-    kind: "edu",
+    year: "2022 — 2023",
+    title: "Senior Secondary Education",
+    org: "Vishwa Bharati Public School",
+    body: "Class XII • [CBSE] • [90.4]%",
+    kind: "edu"
+  },
+  {
+    year: "2021 — 2022",
+    title: "Secondary Education",
+    org: "Vishwa Bharati Public School",
+    body: "Class X • [CBSE] • [92.6]%",
+    kind: "edu"
   },
 ];
 
@@ -664,11 +650,11 @@ function About() {
 function Experience() {
   return (
     <Section
-      id="experience"
+      id="education"
       eyebrow="Timeline"
       title={
         <>
-          Experience & <span className="text-gradient">education</span>
+          <span className="text-gradient">Education</span>
         </>
       }
     >
