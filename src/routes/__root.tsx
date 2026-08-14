@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
+      { title: "Mishika Kulshrestha — AI, ML & Cybersecurity Engineer" },
       {
         name: "description",
         content:
-          "Portfolio of Kai Nakamura — building intelligent systems and defending them. AI/ML research, security engineering, and full-stack product work.",
+          "Portfolio of Mishika Kulshrestha — building intelligent systems and defending them. AI/ML research, security engineering, and full-stack product work.",
       },
-      { property: "og:title", content: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
+      { property: "og:title", content: "Mishika Kulshrestha — AI, ML & Cybersecurity Engineer" },
       {
         property: "og:description",
         content:

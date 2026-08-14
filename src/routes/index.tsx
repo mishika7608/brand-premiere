@@ -36,13 +36,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
+      { title: "Mishika Kulshrestha — AI, ML & Cybersecurity Engineer" },
       {
         name: "description",
         content:
-          "Portfolio of Kai Nakamura — AI/ML research, security engineering, and full-stack product work. Building intelligent systems and defending them.",
+          "Portfolio of Mishika Kulshrestha  — AI/ML research, security engineering, and full-stack product work. Building intelligent systems and defending them.",
       },
-      { property: "og:title", content: "Kai Nakamura — AI, ML & Cybersecurity Engineer" },
+      { property: "og:title", content: "Mishika Kulshrestha — AI, ML & Cybersecurity Engineer" },
       {
         property: "og:description",
         content:
@@ -66,10 +66,10 @@ const NAV = [
 ];
 
 const METRICS = [
-  { label: "Production models shipped", value: 24, suffix: "+" },
-  { label: "CVEs disclosed & patched", value: 12, suffix: "" },
-  { label: "Systems secured", value: 40, suffix: "+" },
-  { label: "Years engineering", value: 7, suffix: "" },
+  { label: "Projects Completed", value: 12, suffix: "+" },
+  { label: "Cybersecurity Certifications", value: 10, suffix: "" },
+  { label: "Technical Skills", value: 15, suffix: "+" },
+  { label: "Curiosity", value: 100, suffix: "%" },
 ];
 
 type TL = { year: string; title: string; org: string; body: string; kind: "work" | "edu" };
@@ -316,7 +316,7 @@ function Nav() {
             <Sparkles className="h-4 w-4" />
           </span>
           <span className="truncate font-display text-sm font-semibold tracking-tight">
-            Kai<span className="text-muted-foreground">.dev</span>
+            mishika<span className="text-muted-foreground">.dev</span>
           </span>
         </a>
 
@@ -471,15 +471,14 @@ function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="font-display text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
           >
-            <span className="block">Kai Nakamura.</span>
+            <span className="block">Mishika Kulshrestha.</span>
             <span className="block text-muted-foreground/80">I build & break</span>
             <span className="block min-h-[1.05em]">
               <TypingHeadline
                 phrases={[
-                  "intelligent systems.",
-                  "adversarial models.",
-                  "zero-trust stacks.",
-                  "production AI.",
+                  "Arificial Intelligence",
+                  "Machine Learning",
+                  "Cybersecurity.",
                 ]}
               />
             </span>
@@ -491,8 +490,8 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="mt-8 max-w-[54ch] text-lg leading-relaxed text-muted-foreground"
           >
-            Staff engineer at the intersection of AI research, offensive security, and product.
-            I ship models that survive the real world — and the adversaries in it.
+            Final-year Computer Science student passionate about Artificial Intelligence, Machine Learning and Cybersecurity. 
+            I build intelligent systems, security tools, and AI-powered solutions that solve real-world problems.
           </motion.p>
 
           <motion.div
@@ -502,16 +501,16 @@ function Hero() {
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <MagneticButton href="#projects">
-              View selected work <ArrowUpRight className="h-4 w-4" />
+              Explore My Projects <ArrowUpRight className="h-4 w-4" />
             </MagneticButton>
             <MagneticButton href="/resume.pdf" variant="ghost">
               <Download className="h-4 w-4" /> Download Resume
             </MagneticButton>
             <div className="ml-1 flex items-center gap-1">
               {[
-                { icon: Github, label: "GitHub", href: "https://github.com" },
-                { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-                { icon: Terminal, label: "LeetCode", href: "https://leetcode.com" },
+                { icon: Github, label: "GitHub", href: "https://github.com/mishika7608" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/mishika-kulshrestha-9b774b305" },
+                { icon: Terminal, label: "LeetCode", href: "https://leetcode.com/u/mishikakul" },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -558,23 +557,26 @@ function Hero() {
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
               <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
               <span className="ml-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                ~/kai — zsh
+                ~/mishika — zsh
               </span>
             </div>
             <pre className="font-mono text-[12.5px] leading-relaxed text-muted-foreground">
 {`> whoami
-kai_nakamura
-> stack --top 4
-ai_ml     ██████████  100
-security  █████████░   92
-systems   ████████░░   84
-product   ███████░░░   76
-> deploy --model sentinel-llm
+Mishika_Kulshrestha
+> skills --top
+ai_ml         ██████████  100
+python        █████████░   92
+cybersecurity ████████░░   84
+c++           ████████░░░  88
+> projects --featured
+✓ Deepfake Detection
+✓ RealTime Network IDS
+✓ Incident-Metrics
 `}
               <span className="text-cyan">✓ shipped in 42s · latency 118ms</span>
             </pre>
             <div className="mt-4 flex items-center justify-between border-t border-border pt-3 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              <span>uptime · 99.998%</span>
+              <span>Learning Every Day · 99.998%</span>
               <span className="inline-flex items-center gap-1.5">
                 <Zap className="h-3 w-3 text-cyan" /> live
               </span>
@@ -598,7 +600,7 @@ function About() {
       eyebrow="About"
       title={
         <>
-          I sit where <span className="text-gradient">research meets adversaries</span>.
+          Engineering AI That  <span className="text-gradient">Solves Real Problems</span>.
         </>
       }
     >
@@ -611,19 +613,21 @@ function About() {
           className="space-y-5 text-lg leading-relaxed text-muted-foreground"
         >
           <p>
-            For the last seven years I've split my time between shipping AI products
-            people actually use, and breaking systems (with permission) so they hold up
-            when someone else tries. I care about the boring parts — evals, telemetry,
-            supply chain, threat models — because that's where reliability lives.
+            I am a final-year Computer Science student passionate about Artificial 
+            Intelligence, Machine Learning, Cybersecurity. I enjoy building 
+            intelligent applications, exploring security research, and developing 
+            practical solutions that address real-world challenges.
           </p>
           <p>
-            I currently lead an applied research team at Halcyon Labs. Before that I
-            built retrieval and inference infrastructure at Aperture AI, and ran red-team
-            engagements for fintech and healthcare at Cloudspire.
+            My current work focuses on AI-powered deepfake detection for
+            women's safety, security analytics, intrusion detection systems,
+            and digital forensics. I believe technology should not only be
+            intelligent but also secure, ethical, and impactful.
           </p>
           <p>
-            Off the clock: DEFCON CTF, long-distance cycling, and open-source
-            maintenance. Based in Brooklyn, working globally.
+            Beyond academics, I enjoy solving Leetcode contests, 
+            experimenting with emerging AI technologies, and continuously learning 
+            about cybersecurity and software engineering.
           </p>
         </motion.div>
         <motion.div
@@ -639,11 +643,11 @@ function About() {
           </div>
           <dl className="space-y-4 text-sm">
             {[
-              ["Location", "Brooklyn, NY · Remote"],
-              ["Currently", "Halcyon Labs · Staff Eng."],
-              ["Focus", "Robust AI · Offensive security"],
-              ["Available", "Advisory · Consulting"],
-              ["Languages", "EN · JA · PT"],
+              ["Location", "India"],
+              ["Currently", "Computer Science Engineering Student"],
+              ["Focus", "Artificial Intelligence · Machine Learning · Cybersecurity"],
+              ["Available", "Open to Internships · Research · Collaborations"],
+              ["Languages", "EN · HI"],
             ].map(([k, v]) => (
               <div key={k} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
                 <dt className="text-muted-foreground">{k}</dt>
