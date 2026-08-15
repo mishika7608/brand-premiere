@@ -68,7 +68,7 @@ const NAV = [
 
 const METRICS = [
   { label: "Projects Completed", value: 12, suffix: "+" },
-  { label: "Cybersecurity Certifications", value: 10, suffix: "" },
+  { label: "Cybersecurity Certifications", value: 15, suffix: "" },
   { label: "Technical Skills", value: 15, suffix: "+" },
   { label: "Curiosity", value: 100, suffix: "%" },
 ];
@@ -300,7 +300,7 @@ function Nav() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/public/resume.pdf"
             className="ml-2 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold text-primary-foreground"
             style={{ backgroundImage: "var(--gradient-brand)" }}
           >
@@ -340,7 +340,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href="/resume.pdf"
+              href="/public/resume.pdf"
               className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-semibold text-primary-foreground"
               style={{ backgroundImage: "var(--gradient-brand)" }}
             >
@@ -432,7 +432,7 @@ function Hero() {
             className="font-display text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
           >
             <span className="block">Mishika Kulshrestha.</span>
-            <span className="block text-muted-foreground/80">I build & break</span>
+            <span className="block text-muted-foreground/80">I build with</span>
             <span className="block min-h-[1.05em]">
               <TypingHeadline
                 phrases={[
@@ -463,7 +463,7 @@ function Hero() {
             <MagneticButton href="#projects">
               Explore My Projects <ArrowUpRight className="h-4 w-4" />
             </MagneticButton>
-            <MagneticButton href="/resume.pdf" variant="ghost">
+            <MagneticButton href="/public/resume.pdf" variant="ghost">
               <Download className="h-4 w-4" /> Download Resume
             </MagneticButton>
             <div className="ml-1 flex items-center gap-1">
@@ -772,7 +772,7 @@ function Projects() {
       eyebrow="Selected work"
       title={
         <>
-          Things I've <span className="text-gradient">shipped</span>
+          Projects I’ve <span className="text-gradient">built</span>
         </>
       }
     >
@@ -927,113 +927,83 @@ function Certifications() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
   return (
     <Section
       id="contact"
       eyebrow="Contact"
       title={
         <>
-          Let's build <span className="text-gradient">something rare</span>.
+          Open to <span className="text-gradient">exciting opportunities</span>.
         </>
       }
     >
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeUp}
-          className="space-y-5"
-        >
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Best for advisory retainers, security audits of AI systems, or a scoped
-            product engagement. I read every message and reply within a few days.
-          </p>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-cyan" />
-              <a href="mailto:hello@kainakamura.dev" className="hover:text-cyan">
-                hello@kainakamura.dev
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 text-cyan" /> Brooklyn, NY · UTC−5
-            </li>
-            <li className="flex items-center gap-3">
-              <GitBranch className="h-4 w-4 text-cyan" /> Open-source at{" "}
-              <a href="https://github.com" className="hover:text-cyan">
-                github.com/kainakamura
-              </a>
-            </li>
-          </ul>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeUp}
+        className="space-y-6"
+      >
+        <p className="text-lg leading-relaxed text-muted-foreground">
+          Open to internships & graduate roles
+        </p>
 
-          <div className="flex flex-wrap items-center gap-2 pt-2">
-            {[
-              { icon: Github, label: "GitHub", href: "https://github.com" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-              { icon: Terminal, label: "LeetCode", href: "https://leetcode.com" },
-            ].map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                target="_blank"
+        <ul className="space-y-4 text-sm">
+          <li className="flex items-center gap-3">
+            <Mail className="h-4 w-4 text-cyan" />
+            <a
+              href="mailto:mishika.gh@gmail.com"
+              className="hover:text-cyan"
+            >
+              mishika.gh@gmail.com
+            </a>
+          </li>
+
+          <li className="flex items-center gap-3">
+            <GitBranch className="h-4 w-4 text-cyan" />
+            <span>{" "}
+              <div
+                
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-cyan/40 hover:text-cyan"
+                className="hover:text-cyan"
               >
-                <s.icon className="h-3.5 w-3.5" /> {s.label}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.form
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeUp}
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
-          className="glass-strong relative overflow-hidden rounded-3xl p-6 md:p-8"
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-px -z-10 rounded-3xl opacity-60 blur-xl"
-            style={{ background: "var(--gradient-brand-soft)" }}
-          />
-          <div className="grid gap-4 md:grid-cols-2">
-            <Field label="Name" name="name" placeholder="Your name" />
-            <Field label="Email" name="email" type="email" placeholder="you@company.com" />
-          </div>
-          <div className="mt-4">
-            <Field label="Subject" name="subject" placeholder="What are we building?" />
-          </div>
-          <div className="mt-4">
-            <label htmlFor="message" className="mb-2 block font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              placeholder="A few lines on scope, timeline, and stakes."
-              className="w-full resize-none rounded-xl border border-border bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-cyan/60 focus:outline-none focus:ring-2 focus:ring-cyan/20"
-            />
-          </div>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              {sent ? "✓ Message sent — talk soon" : "Encrypted in transit"}
+                AI × Cybersecurity
+              </div>
             </span>
-            <MagneticButton>
-              Send message <ArrowUpRight className="h-4 w-4" />
-            </MagneticButton>
-          </div>
-        </motion.form>
-      </div>
+          </li>
+        </ul>
+
+        <div className="flex flex-wrap items-center gap-2 pt-2">
+          {[
+            {
+              icon: Github,
+              label: "GitHub",
+              href: "https://github.com/mishika7608",
+            },
+            {
+              icon: Linkedin,
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/mishika-kulshrestha-9b774b305/",
+            },
+            {
+              icon: Terminal,
+              label: "LeetCode",
+              href: "https://leetcode.com/u/mishikakul/",
+            },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/40 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-cyan/40 hover:text-cyan"
+            >
+              <s.icon className="h-3.5 w-3.5" /> {s.label}
+            </a>
+          ))}
+        </div>
+      </motion.div>
     </Section>
   );
 }
@@ -1070,7 +1040,7 @@ function Footer() {
   return (
     <footer className="border-t border-border px-4 py-10 sm:px-6">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 text-xs text-muted-foreground sm:grid-cols-3">
-        <span>© {new Date().getFullYear()} · Kai Nakamura</span>
+        <span>© {new Date().getFullYear()} · Mishika Kulshrestha </span>
         <span className="sm:text-center">
           Built with intent · React · TanStack · Framer Motion
         </span>
