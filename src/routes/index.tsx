@@ -23,6 +23,7 @@ import {
   Briefcase,
   ExternalLink,
   Zap,
+  Globe,
 } from "lucide-react";
 import {
   Counter,
@@ -99,35 +100,37 @@ const TIMELINE: TL[] = [
 
 const SKILL_GROUPS = [
   {
-    icon: Brain,
-    color: "var(--blue)",
-    title: "AI & Machine Learning",
-    items: ["PyTorch", "JAX", "Transformers", "RAG", "LangGraph", "MLflow", "vLLM", "Diffusion"],
-  },
-  {
     icon: Shield,
     color: "var(--purple)",
     title: "Cybersecurity",
-    items: ["Threat modeling", "Red teaming", "Reverse eng.", "Burp", "Ghidra", "eBPF", "Zero trust", "OWASP"],
+    items: ["Ethical Hacking", "Reverse eng.", "Malware Analysis", "SOC", "Zero trust", "OWASP"],
+  },
+  {
+    icon: Brain,
+    color: "var(--blue)",
+    title: "AI & Machine Learning",
+    items: ["Transformers", "RAG", "LangGraph", "Deep Learning", "Computer Vision", "NLP"],
+  },
+  {
+    icon: Globe,
+    color: "var(--cyan)",
+    title: "Full-Stack",
+    items: ["TypeScript", "React", "Node",  "Python", "MongoDB", "Express",],
   },
   {
     icon: Code2,
-    color: "var(--cyan)",
-    title: "Full-Stack",
-    items: ["TypeScript", "React", "Node", "Rust", "Go", "PostgreSQL", "Redis", "GraphQL"],
-  },
-  {
-    icon: Cloud,
     color: "var(--blue)",
-    title: "Infra & Cloud",
-    items: ["AWS", "GCP", "Kubernetes", "Terraform", "Docker", "Kafka", "CI/CD", "Observability"],
+    title: "Programming",
+    items: ["C++", "Python", "JavaScript", "SQL", "Data Structures & Algorithms"
+    ]
   },
 ];
 
-type Category = "All" | "AI/ML" | "Security" | "Full-Stack";
+type Category = "All" | "Cybersecurity" ;
 type Project = {
   title: string;
   tag: Category;
+  status?: string
   blurb: string;
   stack: string[];
   demo?: string;
@@ -138,69 +141,41 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    title: "Sentinel-LLM",
-    tag: "AI/ML",
+    title: "Deepfake Detection & Digital Safety",
+    tag: "Cybersecurity",
     blurb:
-      "Adversarial-robust fine-tuning framework for open LLMs. Reduces jailbreak success rate by 74% on public benchmarks.",
-    stack: ["PyTorch", "vLLM", "Ray", "Weights & Biases"],
-    demo: "#",
+      "AI-powered system for detecting AI-generated and manipulated images, with analysis focused on facial consistency, semantic manipulation, identity verification, and attribute changes.",
+    stack: ["Python", "Machine Learning", "Computer Vision", "OpenCV"],
+    // demo: "#",
     repo: "#",
-    accent: "blue",
+    status:"Actively Building",
+    accent: "purple",
+
     icon: Brain,
   },
   {
-    title: "Ghost Recon",
-    tag: "Security",
+    title: "RNIDS",
+    tag: "Cybersecurity",
+    // status:"",
     blurb:
-      "eBPF-based runtime threat detection for containerized workloads. Ships as a single Rust binary, <30 MB memory footprint.",
-    stack: ["Rust", "eBPF", "Kubernetes", "OpenTelemetry"],
-    demo: "#",
+      "Real-time network intrusion detection system that captures and analyzes network traffic, extracts flow features, classifies threats with ML models, and provides live risk assessment.",
+    stack: ["Python", "Scapy", "Flask", "TensorFlow"],
+    // demo: "#",
     repo: "#",
-    accent: "purple",
+    accent: "blue",
     icon: Shield,
   },
   {
-    title: "Halcyon Console",
-    tag: "Full-Stack",
+    title: "Agentic Incident Response",
+    tag: "Cybersecurity",
+    // status:"",
     blurb:
-      "Realtime ops console for red-team engagements. Collaborative canvas, replay, and evidence graph — used across 40+ engagements.",
-    stack: ["Next.js", "tRPC", "Postgres", "Yjs"],
-    demo: "#",
+      "AI-driven incident response platform that analyzes security incidents, generates resolution plans, and integrates workflows to automate incident investigation and response.",
+    stack: ["React", "Node.js", "Express", "GenAI", "ServiceNow"],
+    // demo: "#",
     repo: "#",
     accent: "cyan",
     icon: Terminal,
-  },
-  {
-    title: "Prism Retrieval",
-    tag: "AI/ML",
-    blurb:
-      "Hybrid retrieval library — BM25 + late-interaction reranking + graph expansion in a single pluggable pipeline.",
-    stack: ["Python", "FastAPI", "Qdrant", "ONNX"],
-    demo: "#",
-    repo: "#",
-    accent: "cyan",
-    icon: Database,
-  },
-  {
-    title: "Nullbyte Fuzzer",
-    tag: "Security",
-    blurb:
-      "Coverage-guided fuzzer with LLM-assisted mutation targeting parser and protocol bugs. Found 12 disclosed CVEs.",
-    stack: ["C", "LLVM", "Python", "AFL++"],
-    repo: "#",
-    accent: "purple",
-    icon: Lock,
-  },
-  {
-    title: "Pulse Dashboard",
-    tag: "Full-Stack",
-    blurb:
-      "Observability dashboard purpose-built for ML pipelines — traces, drift, and cost in one glassy pane.",
-    stack: ["React", "D3", "ClickHouse", "Tailwind"],
-    demo: "#",
-    repo: "#",
-    accent: "blue",
-    icon: Cpu,
   },
 ];
 
@@ -788,7 +763,7 @@ function Skills() {
 function Projects() {
   const [filter, setFilter] = useState<Category>("All");
   const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
-  const filters: Category[] = ["All", "AI/ML", "Security", "Full-Stack"];
+  const filters: Category[] = ["All"];
 
   const accentVar = { blue: "var(--blue)", cyan: "var(--cyan)", purple: "var(--purple)" } as const;
 
@@ -882,15 +857,21 @@ function Projects() {
                     </a>
                   )}
                   {p.repo && (
-                    <a
-                      href={p.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      <Github className="h-3 w-3" /> Source
-                    </a>
-                  )}
+                <a
+                  href={p.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Github className="h-3 w-3" /> Source
+                </a>
+              )}
+
+              {p.status && (
+                <span className="ml-auto rounded-full border border-cyan/30 bg-cyan/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-cyan">
+                  {p.status}
+                </span>
+              )}
                 </div>
               </div>
             </TiltCard>
