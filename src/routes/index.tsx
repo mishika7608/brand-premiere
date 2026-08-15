@@ -180,12 +180,11 @@ const PROJECTS: Project[] = [
 ];
 
 const CERTS = [
-  { name: "OSCP", by: "Offensive Security", year: "2023" },
-  { name: "OSCE³", by: "Offensive Security", year: "2024" },
-  { name: "AWS Solutions Architect Pro", by: "Amazon Web Services", year: "2023" },
-  { name: "CKA · Certified Kubernetes Admin", by: "CNCF", year: "2022" },
-  { name: "GCIH · Incident Handler", by: "SANS / GIAC", year: "2022" },
-  { name: "DeepLearning.AI TensorFlow Dev", by: "Coursera", year: "2021" },
+  { name: "Network Security Fundamentals", by: "Palo Alto Networks", year: "2026" },
+  { name: "Security Operations Fundamentals", by: "Palo Alto Networks", year: "2026" },
+  { name: "SOC Fundamentals", by: "Cyberexam", year: "2026" },
+  { name: "Agentic AI Certified Foundations Associate" , by: "Oracle", year: "2026" },
+  { name: "Ethical Hacker", by: "Cisco", year: "2025" },
 ];
 
 // ---------- Root ----------
